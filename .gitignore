@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Resultados, caches y pesos (no subir a GitHub)
+results/*
+!results/.gitkeep
+cache/
+activations/
+checkpoints/
+wandb/
+*.pt
+*.pth
+*.safetensors
+*.npy
+*.npz
+
+# Logs de SLURM
+slurm-*.out
+logs/
+
+# Entorno
+.env
+.DS_Store
+.vscode/
+.idea/

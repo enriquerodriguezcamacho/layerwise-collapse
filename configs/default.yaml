@@ -1,0 +1,24 @@
+# Configuración por defecto: modelo pequeño para desarrollo en local (CPU o GPU modesta)
+model:
+  name: EleutherAI/pythia-70m      # alternativas: EleutherAI/pythia-410m, state-spaces/mamba-130m-hf
+  revision: main                   # Pythia publica checkpoints intermedios: step1000, step143000, ...
+  dtype: float32
+
+data:
+  dataset: wikitext
+  subset: wikitext-103-raw-v1
+  split: validation
+  num_prompts: 64
+  max_length: 128
+
+metrics:
+  alpha: 1.0                       # orden de la entropía de Rényi matricial (1.0 = Shannon)
+  compute: [prompt_entropy, effective_rank, curvature]
+
+runtime:
+  device: auto                     # auto | cpu | cuda
+  batch_size: 8
+  seed: 0
+
+output:
+  dir: results/default
